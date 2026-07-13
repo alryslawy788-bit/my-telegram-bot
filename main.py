@@ -2,7 +2,7 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ApplicationBuilder, MessageHandler, CommandHandler, CallbackQueryHandler, filters, ContextTypes
 import re
 
-TOKEN = "YOUR_TOKEN_HERE" 
+TOKEN = "8920702443:AAHjBDpRmT0QhIp_GVc--oKDkAon1lh4B3g" 
 GROUP_ID = -1003835392009
 
 db = {}
