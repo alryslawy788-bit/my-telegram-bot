@@ -2,7 +2,7 @@ from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
 from telegram.ext import ApplicationBuilder, MessageHandler, CommandHandler, CallbackQueryHandler, filters, ContextTypes
 import re
 
-TOKEN = "h" 
+TOKEN = "8920702443:AAHjBDpRmT0QhIp_GVc--oKDkAon1lh4B3g" 
 GROUP_ID = -1003835392009
 
 db = {}
@@ -65,11 +65,14 @@ async def main_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
                     except Exception as e:
                         print(f"خطأ في الإرسال: {e}")
             else:
-                await msg.reply_text(
-                    "❌ *عذراً، لم يتم العثور على أي ملفات لهذا الـ UDID.*\n"
-                    "يرجى التأكد من الرمز أو التواصل مع الدعم: @abn_aqeel", 
-                    parse_mode='Markdown'
+                # رسالة خطأ احترافية
+                error_text = (
+                    "⚠️ *عذراً، لم يتم العثور على شهادة.*\n\n"
+                    "يبدو أن الـ UDID الذي أدخلته غير مسجل في قاعدة بياناتنا.\n"
+                    "يرجى التأكد من الـ UDID والمحاولة مرة أخرى، أو التواصل مع الدعم الفني للمساعدة:\n\n"
+                    "👤 التواصل: @abn_aqeel"
                 )
+                await msg.reply_text(error_text, parse_mode='Markdown')
 
 if __name__ == '__main__':
     app = ApplicationBuilder().token(TOKEN).build()
